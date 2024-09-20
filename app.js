@@ -13,7 +13,7 @@ function enviar() {
     let data = document.getElementById("data").value;
     let inspetor = document.getElementById("inspetor").value;
     let resultado = document.getElementById("resultado").value;
-    console.log(`Valores coletados:\n`);
+    console.log('Valores coletados:\n');
     console.log(`Serial: ${serial}`);
     console.log(`Material: ${material}`);
     console.log(`Descrição: ${descricao}`);
@@ -89,8 +89,8 @@ function carregarProdutos() {
                     <td>${produto.ordem}</td>
                     <td>${produto.data}</td>
                     <td>${produto.inspetor}</td>
-                    <td>${produto.resultado}</td>
-                `;
+                    <td>${produto.resultado}</td>`
+                ;
                 tabela.appendChild(linha);
             });
         })
