@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Conectando ao banco de dados SQLite (persistente)
-const db = new sqlite3.Database('produtos.db'); // Agora o banco de dados é persistente
+const db = new sqlite3.Database('./produtos.db'); // Agora o banco de dados é persistente
 
 // Criando a tabela
 db.serialize(() => {
