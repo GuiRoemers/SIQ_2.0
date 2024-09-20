@@ -4,14 +4,14 @@ const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Configurando o middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 // Conectando ao banco de dados SQLite (persistente)
-const db = new sqlite3.Database('./produtos.db'); // Agora o banco de dados é persistente
+const db = new sqlite3.Database('produtos.db'); // Agora o banco de dados é persistente
 
 // Criando a tabela
 db.serialize(() => {
