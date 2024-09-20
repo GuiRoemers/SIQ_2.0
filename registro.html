@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="stylesheet" href="style_registro.css">
+        <style>
+            #produtos-tabela {
+                display: none; /* Oculta a tabela */
+            }
+        </style>
+    </head>
+<body>
+    <h1>Registro de Produtos</h1>
+    <form method="post">
+        <label for="numero_serie">Número de Série:</label>
+        <input type="text" id="numero_serie" name="numero_serie" required>
+
+        <label for="material">Material:</label>
+        <input type="text" id="material" name="material" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+
+        <label for="ordem">Ordem:</label>
+        <input type="text" id="ordem" name="ordem" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="inspetor">Inspetor:</label>
+        <input type="text" id="inspetor" name="inspetor" required>
+
+        <label for="resultado">Resultado:</label>
+        <select id="resultado" name="resultado" required>
+            <option value="-">-</option>
+            <option value="Aprovado">Aprovado</option>
+            <option value="Reprovado">Reprovado</option>
+        </select>
+
+        <section class="botoes-wrapper"></section>
+            <button onclick="enviar()" type="button" class="botao-form botao-adicionar">Enviar</button>
+            <button onclick="baixar()" type="button" class="botao-form botao-adicionar" id="baixar-btn">Baixar Resultados</button>
+    </form>
+
+    <table id="produtos-tabela">
+        <thead>
+            <tr>
+                <th>Número de Série</th>
+                <th>Material</th>
+                <th>Descrição</th>
+                <th>Ordem</th>
+                <th>Data</th>
+                <th>Inspetor</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
